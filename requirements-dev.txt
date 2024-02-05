@@ -2,3 +2,5 @@
 ruff
 pylint
 flake8
+typer
+click
