@@ -1,0 +1,82 @@
+version: 1.0
+bootstrap: |
+  rm -rf .idea
+  rm -rf .venv
+  rm -rf venv
+  pip install -r requirements-ci.txt
+linter: jetbrains/qodana-python:latest
+profile:
+  name: qodana.recommended
+include:
+  - name: CheckDependencyLicenses
+  - name: CssMissingSemicolon
+  - name: SqlAddNotNullColumnInspection
+  - name: SqlAggregatesInspection
+  - name: SqlAmbiguousColumnInspection
+  - name: SqlAutoIncrementDuplicateInspection
+  - name: SqlCheckUsingColumnsInspection
+  - name: SqlShadowingAliasInspection
+  - name: SqlShouldBeInGroupByInspection
+  - name: SqlConstantConditionInspection
+  - name: SqlConstantExpressionInspection
+  - name: SqlCurrentSchemaInspection
+  - name: SqlWithoutWhereInspection
+  - name: SqlDeprecateTypeInspection
+  - name: SqlDuplicateColumnInspection
+  - name: SqlDerivedTableAliasInspection
+  - name: SqlSignatureInspection
+  - name: SqlIdentifierInspection
+  - name: SqlDtInspection
+  - name: SqlIllegalCursorStateInspection
+  - name: SqlStringLengthExceededInspection
+  - name: SqlDropIndexedColumnInspection
+  - name: SqlInsertNullIntoNotNullInspection
+  - name: SqlInsertIntoGeneratedColumnInspection
+  - name: SqlMisleadingReferenceInspection
+  - name: SqlMissingColumnAliasesInspection
+  - name: SqlMissingReturnInspection
+  - name: SqlMultipleLimitClausesInspection
+  - name: SqlNamedArgumentsInspection
+  - name: SqlNoDataSourceInspection
+  - name: SqlNullComparisonInspection
+  - name: SqlRedundantAliasInspection
+  - name: SqlRedundantCodeInCoalesceInspection
+  - name: SqlRedundantElseNullInspection
+  - name: SqlRedundantOrderingDirectionInspection
+  - name: SqlRedundantLimitInspection
+  - name: SqlDialectInspection
+  - name: SqlStorageInspection
+  - name: SqlSideEffectsInspection
+  - name: SqlTriggerTransitionInspection
+  - name: SqlTypeInspection
+  - name: SqlUnicodeStringLiteralInspection
+  - name: SqlUnreachableCodeInspection
+  - name: SqlResolveInspection
+  - name: SqlJoinWithoutOnInspection
+  - name: SqlUnusedCteInspection
+  - name: SqlUnusedSubqueryItemInspection
+  - name: SqlUnusedVariableInspection
+  - name: SqlGotoInspection
+  - name: SqlTransactionStatementInTriggerInspection
+  - name: SqlCaseVsCoalesceInspection
+  - name: SqlCaseVsIfInspection
+  - name: SqlCallNotationInspection
+  - name: SqlInsertValuesInspection
+  - name: IgnoreFileDuplicateEntry
+exclude:
+  - name: CythonUsageBeforeDeclarationInspection
+  - name: PyUnresolvedReferencesInspection
+  - name: Restricted_Python_calls
+  - name: Query_restricted
+  - name: Query_bound_parameters
+  - name: Query_index_required
+  - name: AppEngineThreadsafeCGIHandlerInspection
+  - name: AppEngineThreadsafeInspection
+  - name: toto.py
+  - name: test.py
+  - name: get_proxy.py
+  - name: pyproject.toml
+  - name: thread_sauve.py
+
+# - name: PyInterpreterInspection
+# pip install -r requirements-ci.txt

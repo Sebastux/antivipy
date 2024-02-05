@@ -1,0 +1,2 @@
+nuitka
+-r requirements-dev.txt
